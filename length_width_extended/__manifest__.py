@@ -1,0 +1,27 @@
+
+{
+    'name': 'Length Width Feature',
+    'version': '15.0.1.0.0',
+    'summary': '',
+    'description': """""",
+    'author': '',
+    'company': '',
+    'maintainer': '',
+    'category': '',
+    'website': '',
+    'depends': ['sale_management', 'purchase', 'stock', 'account'],
+    'data': [
+        'views/sale_view.xml',
+        'views/purchase_view.xml',
+        'views/account_move_view.xml',
+        'views/stock_picking_view.xml',
+        'report/sale_report.xml',
+        'report/purchase_report.xml',
+        'report/account_move_report.xml',
+        'report/stock_picking_report.xml',
+    ],
+    'images': [],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}
