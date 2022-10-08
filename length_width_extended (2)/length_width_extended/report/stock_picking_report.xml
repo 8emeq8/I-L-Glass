@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_delivery_document" inherit_id="stock.report_delivery_document">
+        <xpath expr='//th[@name="th_sm_ordered"]' position="before">
+            <th name="th_length" class="text-left">Length</th>
+            <th name="th_length" class="text-left">Width</th>
+            <th name="th_meter" class="text-left">Meter</th>
+            <th name="th_unit" class="text-left">Unit</th>
+        </xpath>
+        <xpath expr='//td[2]' position="before">
+            <td name="td_unit_length" class="text-left">
+				<span t-field="move.unit_length"/>
+			</td>
+			<td name="td_unit_width" class="text-left">
+				<span t-field="move.unit_width"/>
+			</td>
+			<td name="td_total_meter" class="text-left">
+				<span t-field="move.total_meter"/>
+			</td>
+			<td name="td_unit_qty" class="text-left">
+				<span t-field="move.unit_qty"/>
+			</td>
+        </xpath>
+    </template>
+
+    <template id="report_picking" inherit_id="stock.report_picking">
+        <xpath expr='//th[@name="th_product"]' position="after">
+            <th name="th_length" class="text-left">Length</th>
+            <th name="th_length" class="text-left">Width</th>
+            <th name="th_meter" class="text-left">Meter</th>
+            <th name="th_unit" class="text-left">Unit</th>
+        </xpath>
+        <xpath expr='//td[1]' position="after">
+            <td name="td_unit_length" class="text-left">
+				<span t-field="ml.move_id.unit_length"/>
+			</td>
+			<td name="td_unit_width" class="text-left">
+				<span t-field="ml.move_id.unit_width"/>
+			</td>
+			<td name="td_total_meter" class="text-left">
+				<span t-field="ml.move_id.total_meter"/>
+			</td>
+			<td name="td_unit_qty" class="text-left">
+				<span t-field="ml.move_id.unit_qty"/>
+			</td>
+        </xpath>
+    </template>
+
+</odoo>
