@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="view_move_form" model="ir.ui.view">
+			<field name="name">account.move</field>
+			<field name="model">account.move</field>
+ 			<field name="inherit_id" ref="account.view_move_form"/>
+			<field name="arch" type="xml">
+            	<xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='quantity']" position="before">
+					<field name="unit_length"/>
+					<field name="unit_width"/>
+					<field name="total_meter"/>
+					<field name="unit_qty"/>
+				</xpath>
+				<xpath expr="//field[@name='line_ids']/tree//field[@name='debit']" position="before">
+					<field name="unit_length" invisible="1"/>
+					<field name="unit_width" invisible="1"/>
+					<field name="total_meter" invisible="1"/>
+					<field name="unit_qty" invisible="1"/>
+				</xpath>
+	 		</field>
+		</record>
+
+	</data>
+</odoo>
