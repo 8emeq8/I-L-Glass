@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr='//th[@name="th_quantity"]' position="before">
+            <th name="th_length" class="text-left">Length</th>
+            <th name="th_length" class="text-left">Width</th>
+            <th name="th_meter" class="text-left">Meter</th>
+            <th name="th_unit" class="text-left">Unit</th>
+        </xpath>
+        <xpath expr='//td[@name="td_quantity"]' position="before">
+            <td name="td_unit_length">
+				<span t-field="line.unit_length"/>
+			</td>
+			<td name="td_unit_width">
+				<span t-field="line.unit_width"/>
+			</td>
+			<td name="td_total_meter">
+				<span t-field="line.total_meter"/>
+			</td>
+			<td name="td_unit_qty">
+				<span t-field="line.unit_qty"/>
+			</td>
+        </xpath>
+    </template>
+
+</odoo>
